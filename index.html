@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saim Zafar | DevHQ</title>
+    <meta name="description"
+        content="Personal Portfolio of Saim Zafar, Full-Stack Developer & Machine Learning practitioner. Explore my projects, achievements, and skills.">
+
+    <!-- Open Graph SEO -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Saim Zafar | DevHQ">
+    <meta property="og:description" content="Full-Stack Developer & ML practitioner - projects, achievements, and technical skills.">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+</head>
+
+<body>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="preloader-logo">S<span class="purple-text">Z</span></div>
+        <div class="preloader-bar"><span></span></div>
+    </div>
+    <script>
+        /* Hide preloader as soon as the DOM is ready; runs independently
+           of the CDN libraries so it can never get stuck */
+        (function () {
+            var hide = function () {
+                var p = document.getElementById('preloader');
+                if (p) p.classList.add('hidden');
+            };
+            if (document.readyState !== 'loading') {
+                setTimeout(hide, 400);
+            } else {
+                document.addEventListener('DOMContentLoaded', function () {
+                    setTimeout(hide, 400);
+                });
+            }
+            setTimeout(hide, 2000);
+        })();
+    </script>
+
+    <!-- Scroll progress bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Custom cursor -->
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
+
+    <!-- Floating navbar -->
+    <nav class="navbar" id="navbar">
+        <a href="#home" class="nav-logo">Saim<span class="purple-text">Zafar</span></a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home" class="nav-link active">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#achievements" class="nav-link">Achievements</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#profiles" class="nav-link">Profiles</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle Menu"><i class="fa-solid fa-bars"></i></button>
+    </nav>
+
+    <div class="background-container">
+        <canvas id="bg-canvas"></canvas>
+    </div>
+
+    <main class="hero" id="home">
+
+        <div class="floating-icon icon-top-left"><i class="fa-solid fa-code"></i></div>
+        <div class="floating-icon icon-top-right"><i class="fa-solid fa-brain"></i></div>
+        <div class="floating-icon icon-bottom-left"><i class="fa-solid fa-trophy"></i></div>
+        <div class="floating-icon icon-bottom-right"><i class="fa-solid fa-heart-pulse"></i></div>
+
+        <div class="content-wrapper">
+            <h2 class="sub-title">Woah! You Landed on the Portfolio Website of The</h2>
+            <h1 class="main-title"><span class="purple-text" id="typing-text"></span><span class="typing-caret">|</span></h1>
+            <h5 class="year">Saim Zafar | BSIT @ Bahria University Islamabad</h5>
+            <div class="hero-buttons">
+                <a href="https://www.linkedin.com/in/saim-zafar-097b842b4/" target="_blank" class="btn-resume">Let's Connect</a>
+                <a href="javascript:void(0)" id="openResumeBtn" class="btn-resume">View Resume</a>
+            </div>
+        </div>
+
+        <div class="scroll-hint"><span></span></div>
+    </main>
+
+    <section class="about-section" id="about">
+        <div class="glass-card scroll-reveal">
+            <h2>About Me - <span class="purple-text">Behind The Code!</span></h2>
+            <p>
+                I am a Full-Stack Developer and machine-learning practitioner with a strong academic record and
+                hands-on experience building and deploying end-to-end web and ML applications. I work across
+                React, Node.js/Express, FastAPI and REST APIs, with secure authentication (JWT, OAuth) and cloud
+                deployment via Docker, Vercel, Render, and Hugging Face Spaces.
+
+                <br><br>From training convolutional neural networks in PyTorch to architecting normalized databases
+                and shipping production frontends, I focus on building secure, scalable, and explainable systems -
+                and I never stop learning.
+            </p>
+
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number" data-count="3.90" data-decimals="2">0</span>
+                    <span class="stat-label">CGPA / 4.00</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="8" data-suffix="+">0</span>
+                    <span class="stat-label">Projects Built</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="0.92" data-decimals="2">0</span>
+                    <span class="stat-label">Macro-AUC (ECG Model)</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="35" data-suffix="+">0</span>
+                    <span class="stat-label">REST Endpoints Shipped</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="projects-section" id="achievements">
+        <h2 class="section-title">Achievements - <span class="purple-text">Milestones & Medals!</span></h2>
+        <br>
+        <div class="timeline">
+            <div class="timeline-line">
+                <div class="timeline-progress"></div>
+            </div>
+
+            <div class="timeline-item left">
+                <div class="timeline-number">01</div>
+                <div class="timeline-content">
+                    <div class="project-tag">IEEE Award</div>
+                    <div class="achievement-icon"><i class="fa-solid fa-trophy"></i></div>
+                    <h3>Runner-Up - Department Innovation Challenge</h3>
+                    <p class="timeline-text">
+                        • Secured Runner-Up (IEEE Award) at the Semester Project Showcase, Bahria University
+                        Islamabad, for SkillLink - a full-stack freelance marketplace system.<br><br>
+                        • Recognized among all department semester projects for engineering depth and execution.
+                    </p>
+                </div>
+                <div class="timeline-date">SPRING 2026</div>
+                <div class="timeline-dot"></div>
+            </div>
+
+            <div class="timeline-item right">
+                <div class="timeline-number">02</div>
+                <div class="timeline-content">
+                    <div class="project-tag">Competitive Programming</div>
+                    <div class="achievement-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                    <h3>5th Place - CODEZAAR Competition</h3>
+                    <div class="cert-img-wrapper">
+                        <img src="Codezaar_Certificate.jpg" alt="CODEZAAR Certificate"
+                            loading="lazy" onerror="this.closest('.cert-img-wrapper').style.display='none'">
+                        <div class="cert-overlay">
+                            <a href="Codezaar_Certificate.jpg" target="_blank"
+                                class="cert-overlay-link">
+                                <span>View Certificate</span>
+                                <i class="fa-solid fa-arrow-right-long"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <p class="timeline-text">
+                        • Placed 5th at CODEZAAR, a multi-university competitive programming competition hosted
+                        by YOTA at Bahria University, E-8 Campus Islamabad.<br><br>
+                        • Competed against programmers from universities across the region under timed contest
+                        conditions.
+                    </p>
+                </div>
+                <div class="timeline-date">OCT 2025</div>
+                <div class="timeline-dot"></div>
+            </div>
+
+            <div class="timeline-item left">
+                <div class="timeline-number">03</div>
+                <div class="timeline-content">
+                    <div class="project-tag">Academic Excellence</div>
+                    <div class="achievement-icon"><i class="fa-solid fa-medal"></i></div>
+                    <h3>Merit Scholarship (1st Position) & Rector's Honor List</h3>
+                    <p class="timeline-text">
+                        • Awarded the merit-based scholarship for securing 1st position in the 1st, 2nd, and 4th
+                        semesters at Bahria University (GPAs 4.00, 3.91, 3.94).<br><br>
+                        • Named to the Rector's Honor List in each of those semesters - CGPA 3.90 / 4.00.
+                    </p>
+                </div>
+                <div class="timeline-date">2024 - PRESENT</div>
+                <div class="timeline-dot"></div>
+            </div>
+
+            <div class="timeline-item right">
+                <div class="timeline-number">04</div>
+                <div class="timeline-content">
+                    <div class="project-tag">Certification</div>
+                    <div class="achievement-icon"><i class="fa-brands fa-python"></i></div>
+                    <h3>Python for Data Science - Udemy</h3>
+                    <div class="cert-img-wrapper">
+                        <img src="https://udemy-certificate.s3.amazonaws.com/image/UC-59ebce7d-5d17-40d7-8be9-0469fea4f0d2.jpg"
+                            alt="Udemy Python for Data Science Certificate" loading="lazy"
+                            onerror="this.closest('.cert-img-wrapper').style.display='none'">
+                        <div class="cert-overlay">
+                            <a href="https://www.udemy.com/certificate/UC-59ebce7d-5d17-40d7-8be9-0469fea4f0d2/"
+                                target="_blank" class="cert-overlay-link">
+                                <span>View Credentials</span>
+                                <i class="fa-solid fa-arrow-right-long"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <p class="timeline-text">
+                        • Completed 22.5 hours of certified training covering NumPy, Pandas, Matplotlib and the
+                        end-to-end data science workflow.<br><br>
+                        • Applied the skills by re-implementing KNN, Decision Trees, Random Forest, SVM and PCA
+                        from scratch and benchmarking against scikit-learn.
+                    </p>
+                </div>
+                <div class="timeline-date">AUG 2025</div>
+                <div class="timeline-dot"></div>
+            </div>
+
+            <div class="timeline-item left">
+                <div class="timeline-number">05</div>
+                <div class="timeline-content">
+                    <div class="project-tag">Certification</div>
+                    <div class="achievement-icon"><i class="fa-solid fa-code"></i></div>
+                    <h3>Python Demonstrations For Practice Course - Udemy</h3>
+                    <div class="cert-img-wrapper">
+                        <img src="https://udemy-certificate.s3.amazonaws.com/image/UC-0d1ff596-b8df-46ab-98a7-f4362ba73e7f.jpg"
+                            alt="Udemy Python Demonstrations Certificate" loading="lazy"
+                            onerror="this.closest('.cert-img-wrapper').style.display='none'">
+                        <div class="cert-overlay">
+                            <a href="https://www.udemy.com/certificate/UC-0d1ff596-b8df-46ab-98a7-f4362ba73e7f/"
+                                target="_blank" class="cert-overlay-link">
+                                <span>View Credentials</span>
+                                <i class="fa-solid fa-arrow-right-long"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <p class="timeline-text">
+                        • Completed 5.5 hours of hands-on Python practice covering core language constructs
+                        through applied demonstrations.<br><br>
+                        • Strengthened Python fundamentals that power my data science and deep learning work.
+                    </p>
+                </div>
+                <div class="timeline-date">JUL 2025</div>
+                <div class="timeline-dot"></div>
+            </div>
+
+            <div class="timeline-item right">
+                <div class="timeline-number">06</div>
+                <div class="timeline-content">
+                    <div class="project-tag">Leadership & Community</div>
+                    <div class="achievement-icon"><i class="fa-solid fa-users"></i></div>
+                    <h3>Youth Speak Forum 2025 - AIESEC Islamabad</h3>
+                    <div class="cert-img-wrapper">
+                        <img src="YouthSpeak_Certificate.jpg" alt="Youth Speak Forum Certificate"
+                            loading="lazy" onerror="this.closest('.cert-img-wrapper').style.display='none'">
+                        <div class="cert-overlay">
+                            <a href="YouthSpeak_Certificate.jpg" target="_blank"
+                                class="cert-overlay-link">
+                                <span>View Certificate</span>
+                                <i class="fa-solid fa-arrow-right-long"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <p class="timeline-text">
+                        • Participated in the Youth Speak Forum 2025 organized by AIESEC Islamabad.<br><br>
+                        • Engaged with youth leaders and industry speakers on innovation, impact, and
+                        professional growth.
+                    </p>
+                </div>
+                <div class="timeline-date">2025</div>
+                <div class="timeline-dot"></div>
+            </div>
+        </div>
+    </section>
+
+    <br>
+
+    <section class="projects-section" id="projects">
+        <h2 class="section-title">Projects Showcase - <span class="purple-text">What I've Built!</span></h2>
+        <br>
+        <div class="experience-grid">
+
+            <div class="experience-card featured-card">
+                <div class="experience-date">DEEP LEARNING · FULL-STACK</div>
+                <div class="project-tag">Explainable AI Health Platform</div>
+                <h3>ECG-Scope</h3>
+                <p>
+                    Full-stack platform that classifies 12-lead ECGs into five diagnostic categories with Grad-CAM
+                    visual explanations. Trained a 1D CNN from scratch on PTB-XL (~21,000 ECGs) to 0.92 macro-AUC,
+                    recovered cross-hospital performance with AdaBN test-time adaptation, and served it via a
+                    Dockerized FastAPI on Hugging Face Spaces with a React + Supabase frontend on Vercel.
+                </p>
+                <div class="tech-pills">
+                    <span>PyTorch</span><span>FastAPI</span><span>React</span><span>Supabase</span><span>Docker</span>
+                </div>
+                <div class="project-links-wrapper">
+                    <a href="https://ecg-ptbxl-project.vercel.app/" target="_blank" class="project-btn primary-btn"><i
+                            class="fa-regular fa-eye"></i> View Live</a>
+                    <a href="https://github.com/SaimZafar" target="_blank" class="project-btn primary-btn"><i
+                            class="fa-brands fa-github"></i> GitHub</a>
+                </div>
+            </div>
+
+            <div class="experience-card">
+                <div class="experience-date">FULL-STACK · AI INTEGRATION</div>
+                <div class="project-tag">AI Content Moderation</div>
+                <h3>ModGuard</h3>
+                <p>
+                    Platform that screens user-submitted images with the Google Gemini API across six policy
+                    categories, returning Approved / Flagged / Blocked verdicts with per-category confidence. Features
+                    a policy-driven verdict engine, JWT auth with role-based middleware, an appeals workflow, and a
+                    Recharts analytics dashboard - fully containerized with Docker Compose.
+                </p>
+                <div class="tech-pills">
+                    <span>Node.js</span><span>MongoDB</span><span>React</span><span>Gemini API</span><span>Docker</span>
+                </div>
+                <div class="project-links-wrapper">
+                    <a href="https://content-moderation-nine.vercel.app/" target="_blank"
+                        class="project-btn primary-btn"><i class="fa-regular fa-eye"></i> View Live</a>
+                    <a href="https://github.com/SaimZafar" target="_blank" class="project-btn primary-btn"><i
+                            class="fa-brands fa-github"></i> GitHub</a>
+                </div>
+            </div>
+
+            <div class="experience-card">
+                <div class="experience-date">FULL-STACK · TEAM PROJECT</div>
+                <div class="project-tag">Online Marketplace</div>
+                <h3>Nexora</h3>
+                <p>
+                    Cloud-native online marketplace with RESTful APIs for listings, cart, checkout and order history.
+                    Multi-strategy auth (Google OAuth, Facebook OAuth, local) via Passport.js + JWT, AWS S3 image
+                    storage, bcrypt + Helmet hardening, admin panel, CSV export and QR-code order generation -
+                    deployed across Vercel, Render, and Clever Cloud MySQL.
+                </p>
+                <div class="tech-pills">
+                    <span>Express.js</span><span>MySQL</span><span>Sequelize</span><span>AWS S3</span><span>Passport.js</span>
+                </div>
+                <div class="project-links-wrapper">
+                    <a href="https://github.com/SaimZafar" target="_blank" class="project-btn primary-btn"><i
+                            class="fa-brands fa-github"></i> GitHub</a>
+                </div>
+            </div>
+
+            <div class="experience-card">
+                <div class="experience-date">DATABASE · BACKEND</div>
+                <div class="project-tag">IEEE Runner-Up Project</div>
+                <h3>SkillLink</h3>
+                <p>
+                    Freelance marketplace built on 15 fully normalized Oracle tables (3NF) covering registration,
+                    project posting, competitive bidding, contracts, milestones and reviews. Exposes 35 REST endpoints
+                    with multi-table transactions and role-based access control for clients, freelancers and admins.
+                    Runner-Up at the IEEE Department Innovation Challenge (Spring 2026).
+                </p>
+                <div class="tech-pills">
+                    <span>Oracle XE</span><span>Node.js</span><span>React</span><span>JWT</span><span>RBAC</span>
+                </div>
+                <div class="project-links-wrapper">
+                    <a href="https://github.com/SaimZafar" target="_blank" class="project-btn primary-btn"><i
+                            class="fa-brands fa-github"></i> GitHub</a>
+                </div>
+            </div>
+
+            <div class="experience-card">
+                <div class="experience-date">SYSTEMS · KERNEL</div>
+                <div class="project-tag">OS Concepts Simulator</div>
+                <h3>NovaCORE</h3>
+                <p>
+                    Terminal-based OS simulator in C covering CPU scheduling (Round Robin/SJF/Priority), page
+                    replacement (FIFO/LRU/Optimal), Producer-Consumer IPC and Banker's Algorithm deadlock detection.
+                    Extended the xv6 teaching kernel with a real getmeminfo() system call (syscall #22) across nine
+                    kernel source files - compiled with zero warnings on GCC 13.
+                </p>
+                <div class="tech-pills">
+                    <span>C (C99)</span><span>pthreads</span><span>xv6</span><span>QEMU</span><span>GCC</span>
+                </div>
+                <div class="project-links-wrapper">
+                    <a href="https://github.com/SaimZafar" target="_blank" class="project-btn primary-btn"><i
+                            class="fa-brands fa-github"></i> GitHub</a>
+                </div>
+            </div>
+
+        </div>
+        <p class="profile-note">More on GitHub: Competria (C++/Qt), ML algorithms from scratch, and enterprise network design!</p>
+    </section>
+
+    <br>
+
+    <section class="skills-section" id="skills">
+        <h2 class="section-title">Technical Skills - <span class="purple-text">Core Expertise!</span></h2>
+        <div class="skill-grid">
+
+            <div class="skill-card"><i class="devicon-python-plain colored"></i><span>Python</span></div>
+            <div class="skill-card"><i class="devicon-javascript-plain colored"></i><span>JavaScript</span></div>
+            <div class="skill-card"><i class="devicon-cplusplus-plain colored"></i><span>C++</span></div>
+            <div class="skill-card"><i class="devicon-c-plain colored"></i><span>C</span></div>
+            <div class="skill-card"><i class="devicon-react-original colored"></i><span>React.js</span></div>
+            <div class="skill-card"><i class="devicon-html5-plain colored"></i><span>HTML5</span></div>
+            <div class="skill-card"><i class="devicon-css3-plain colored"></i><span>CSS3</span></div>
+            <div class="skill-card"><i class="devicon-jquery-plain colored"></i><span>jQuery</span></div>
+            <div class="skill-card"><i class="devicon-nodejs-plain-wordmark colored"></i><span>Node.js</span></div>
+            <div class="skill-card"><i class="devicon-express-original"></i><span>Express.js</span></div>
+            <div class="skill-card"><i class="devicon-fastapi-plain colored"></i><span>FastAPI</span></div>
+            <div class="skill-card"><i class="devicon-pytorch-original colored"></i><span>PyTorch</span></div>
+            <div class="skill-card"><i class="devicon-numpy-plain colored"></i><span>NumPy</span></div>
+            <div class="skill-card"><i class="devicon-pandas-plain"></i><span>Pandas</span></div>
+            <div class="skill-card"><i class="devicon-mongodb-plain colored"></i><span>MongoDB</span></div>
+            <div class="skill-card"><i class="devicon-mysql-plain colored"></i><span>MySQL</span></div>
+            <div class="skill-card"><i class="devicon-oracle-original colored"></i><span>Oracle</span></div>
+            <div class="skill-card"><i class="devicon-supabase-plain colored"></i><span>Supabase</span></div>
+            <div class="skill-card"><i class="devicon-docker-plain colored"></i><span>Docker</span></div>
+            <div class="skill-card"><i class="devicon-git-plain colored"></i><span>Git</span></div>
+            <div class="skill-card"><i class="devicon-github-original"></i><span>GitHub</span></div>
+            <div class="skill-card"><i class="devicon-vercel-original"></i><span>Vercel</span></div>
+
+        </div>
+    </section>
+
+    <br>
+
+    <section class="profiles-section" id="profiles">
+        <h2 class="section-title">Web Presence - <span class="purple-text">Dev Network!</span></h2>
+        <div class="profile-header">
+            <div class="profile-img-main">
+                <span class="avatar-initials">SZ</span>
+            </div>
+            <div class="profile-text">
+                <p class="purple-text">@SaimZafar</p>
+            </div>
+        </div>
+
+        <div class="profiles-grid">
+
+            <a href="https://www.linkedin.com/in/saim-zafar-097b842b4/" target="_blank" class="profile-card">
+                <div class="profile-icon"><i class="fa-brands fa-linkedin" style="color: #0077b5;"></i></div>
+                <div class="profile-info">
+                    <h3>LinkedIn</h3>
+                    <p>Connect</p>
+                </div>
+            </a>
+
+            <a href="https://github.com/SaimZafar" target="_blank" class="profile-card">
+                <div class="profile-icon"><i class="fa-brands fa-github" style="color: #fff;"></i></div>
+                <div class="profile-info">
+                    <h3>GitHub</h3>
+                    <p>Commit</p>
+                </div>
+            </a>
+
+            <a href="mailto:saim120zafar@gmail.com" class="profile-card">
+                <div class="profile-icon"><i class="fa-solid fa-envelope" style="color: #a855f7;"></i></div>
+                <div class="profile-info">
+                    <h3>Email</h3>
+                    <p>Reach Out</p>
+                </div>
+            </a>
+
+        </div>
+        <br>
+        <p class="profile-note">You can explore further by clicking on any of the profile cards above!</p>
+    </section>
+
+    <br>
+
+    <section class="contact-section" id="contact">
+        <div class="contact-container">
+            <h2 class="section-title">Get In Touch - <span class="purple-text">Ask Me Anything!</span></h2>
+            <h4 class="contact-note">Ready to collaborate or have a project in mind?<br> I'm always open to new
+                opportunities and interesting conversations.</h4>
+            <div class="contact-card">
+                <form id="contactForm" class="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" required placeholder=" " autocomplete="off">
+                        <label for="name">Name</label>
+                        <i class="fa-solid fa-user input-icon"></i>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" required placeholder=" " autocomplete="off">
+                        <label for="email">Email</label>
+                        <i class="fa-solid fa-envelope input-icon"></i>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" rows="4" required placeholder=" "></textarea>
+                        <label for="message">Message</label>
+                        <i class="fa-solid fa-comment input-icon"></i>
+                    </div>
+                    <button type="submit" class="btn-resume btn-submit">
+                        <span>Send Message</span>
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <br>
+
+    <footer class="footer">
+        <div class="footer-container">
+
+            <div class="footer-brand">
+                <h2 class="footer-logo">Saim<span class="purple-text">Zafar</span></h2>
+                <p class="footer-tagline">Building Secure, Scalable & Explainable Systems!</p>
+            </div>
+
+            <ul class="footer-nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#profiles">Profiles</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <div class="footer-socials">
+                <a href="https://www.linkedin.com/in/saim-zafar-097b842b4/" target="_blank" class="social-link linkedin"><i
+                        class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/SaimZafar" target="_blank" class="social-link github"><i
+                        class="fa-brands fa-github"></i></a>
+                <a href="mailto:saim120zafar@gmail.com" class="social-link email"><i
+                        class="fa-solid fa-envelope"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Saim Zafar | Designed & Developed with <i class="fa-solid fa-heart"
+                    style="color: var(--accent-purple);"></i> !</p>
+            <button id="backToTop" class="back-to-top" aria-label="Back to Top">
+                <i class="fa-solid fa-arrow-up"></i>
+            </button>
+        </div>
+    </footer>
+
+    <div id="resumeModal" class="resume-modal">
+        <div class="resume-modal-content glass-card">
+            <span class="close-modal" id="closeResumeBtn">&times;</span>
+            <h2 style="margin-bottom: 20px;">My Resume - <span class="purple-text">On Paper!</span></h2>
+            <div class="resume-iframe-container">
+                <iframe id="resumeFrame" data-src="SaimZafar-Resume.pdf" width="100%" height="100%"
+                    style="border: none;"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script src="3d_background.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
