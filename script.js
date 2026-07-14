@@ -253,7 +253,7 @@ document.addEventListener('DOMContentLoaded', () => {
     /* ---------- Contact form (Web3Forms) ----------
        Get a free access key at https://web3forms.com and
        paste it below to make the form deliver to your email. */
-    const WEB3FORMS_ACCESS_KEY = "YOUR_WEB3FORMS_ACCESS_KEY";
+    const WEB3FORMS_ACCESS_KEY = "40b7460e-7f6c-40cb-a9c1-0a1543651c34";
 
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
